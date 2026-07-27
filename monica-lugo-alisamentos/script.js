@@ -114,6 +114,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const renderServices = () => {
     const grid = document.querySelector("#services-grid");
+    // Lucide Icons (ISC): only the three service icons are inlined, with no icon runtime to load.
+    const serviceIcons = [
+      `<svg class="lucide lucide-scissors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/><path d="M8.12 15.88 12 12"/></svg>`,
+      `<svg class="lucide lucide-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>`,
+      `<svg class="lucide lucide-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7 9.5 11"/><path d="M13.5 14a3 3 0 0 1 7 0"/><path d="M16.5 4.5A.5.5 0 0 0 22 4"/><path d="M18.323 15.5A.5.5 0 0 0 20.5 14"/><path d="m4 6.5 3.33-2.817"/><path d="M6 11a5.5 5.5 0 1 1-3.5 5.128"/><path d="M7.33 3.683A2 2 0 0 1 12 7"/><circle cx="19" cy="3" r="1"/></svg>`
+    ];
 
     if (!grid) return;
 
@@ -121,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(
         (service, index) => `
           <article class="service-card">
-            <span class="service-icon" aria-hidden="true">${service.icon}</span>
+            <span class="service-icon" aria-hidden="true">${serviceIcons[index]}</span>
             <h3>${service.title}</h3>
             <p>${service.description}</p>
             <a href="#" data-service-whatsapp data-service-index="${index}" aria-label="Consultar ${service.title} pelo WhatsApp">Consultar pelo WhatsApp</a>

@@ -109,11 +109,13 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
 .section-heading { margin-bottom: 30px; display: grid; gap: 15px; }
 .section-heading > p { margin: 0; color: var(--color-muted); font-size: 0.95rem; }
 .services-grid { display: grid; gap: 10px; }
-.service-card { min-height: 136px; padding: 18px; display: grid; grid-template-columns: 42px minmax(0, 1fr); grid-template-rows: auto 1fr auto; column-gap: 14px; border: 1px solid rgba(255,255,255,0.9); border-radius: 19px; background: rgba(255,255,255,0.78); }
-.service-icon { grid-row: 1 / span 2; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(173,123,62,0.16); border-radius: 50%; background: rgba(255,255,255,0.65); color: var(--color-gold-dark); font-family: "Playfair Display", Georgia, serif; font-size: 0.92rem; font-weight: 700; }
-.service-card h3 { margin: 1px 0 4px; font-family: "Playfair Display", Georgia, serif; font-size: 1.4rem; line-height: 1.15; }
-.service-card p { margin: 0; color: var(--color-muted); font-size: 0.87rem; line-height: 1.45; }
-.service-card a { grid-column: 1 / -1; min-height: 48px; margin-top: 12px; padding-top: 12px; display: inline-flex; align-items: center; border-top: 1px solid rgba(30,25,23,0.08); color: var(--color-gold-dark); font-size: 0.875rem; font-weight: 800; text-decoration: none; }
+.service-card { position: relative; min-height: 218px; padding: 20px; display: grid; grid-template-columns: 50px minmax(0, 1fr); grid-template-rows: auto 1fr auto; column-gap: 15px; overflow: hidden; border: 1px solid rgba(173,123,62,0.2); border-radius: 20px; background: linear-gradient(145deg, rgba(255,255,255,0.94), rgba(255,255,255,0.72)); box-shadow: 0 8px 18px rgba(68, 45, 26, 0.04); }
+.service-card::before { content: ""; position: absolute; top: 0; left: 20px; width: 38px; height: 3px; border-radius: 0 0 99px 99px; background: var(--color-gold); }
+.service-icon { grid-row: 1 / span 2; width: 50px; height: 50px; display: grid; place-items: center; border: 1px solid rgba(173,123,62,0.22); border-radius: 16px; background: rgba(241,229,216,0.62); color: var(--color-gold-dark); }
+.service-icon svg { width: 25px; height: 25px; }
+.service-card h3 { margin: 4px 0 7px; font-family: "Playfair Display", Georgia, serif; font-size: 1.46rem; line-height: 1.12; }
+.service-card p { margin: 0; align-self: start; color: var(--color-muted); font-size: 0.9rem; line-height: 1.5; }
+.service-card a { grid-column: 1 / -1; min-height: 48px; margin-top: 15px; padding-top: 13px; display: inline-flex; align-items: center; border-top: 1px solid rgba(173,123,62,0.18); color: var(--color-gold-dark); font-size: 0.875rem; font-weight: 800; text-decoration: none; }
 
 .results-grid { display: grid; gap: 15px; }
 .result-card { overflow: hidden; border: 1px solid var(--color-border); border-radius: 22px; background: var(--color-surface); box-shadow: var(--shadow-card); }
@@ -219,7 +221,7 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
   .section-soft { margin-top: 90px; padding: 68px clamp(32px, 5vw, 72px); border-radius: 38px; }
   .section-heading { grid-template-columns: 1fr minmax(250px, 390px); align-items: end; gap: 32px; }
   .services-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .service-card { min-height: 300px; padding: 25px; }
+  .service-card { min-height: 268px; padding: 25px; }
   .results-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .before-after .photo-placeholder { min-height: 285px; }
   .authority-section { grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr); align-items: center; gap: clamp(42px, 8vw, 100px); }
