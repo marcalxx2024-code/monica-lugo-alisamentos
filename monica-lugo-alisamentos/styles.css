@@ -390,6 +390,19 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
   pointer-events: none;
 }
 
+.monstera-leaf {
+  position: absolute;
+  top: clamp(-150px, -10vw, -72px);
+  right: clamp(-132px, -9vw, -54px);
+  width: clamp(190px, 22vw, 330px);
+  height: auto;
+  color: #6f8061;
+  opacity: 0.2;
+  transform: rotate(18deg);
+  transform-origin: top right;
+  will-change: transform;
+}
+
 .leaf {
   position: absolute;
   width: clamp(30px, 4vw, 58px);
@@ -411,6 +424,7 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
 
 @media (prefers-reduced-motion: no-preference) {
   .leaf { animation: leaf-drift 24s linear infinite; }
+  .monstera-leaf { animation: monstera-sway 30s ease-in-out infinite alternate; }
   .leaf--two { animation-delay: -17s; animation-duration: 29s; }
   .leaf--three { animation-delay: -8s; animation-duration: 33s; }
   .leaf--four { animation-delay: -21s; animation-duration: 26s; }
@@ -423,13 +437,18 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
   to { transform: translate3d(var(--drift-end), 125vh, 0) rotate(calc(var(--rotation) + var(--turn))); }
 }
 
+@keyframes monstera-sway {
+  from { transform: rotate(18deg) translate3d(0, 0, 0); }
+  to { transform: rotate(20deg) translate3d(-6px, 5px, 0); }
+}
+
 @media (max-width: 480px) {
   .leaf { width: 34px; opacity: 0.38; }
   .leaf--five { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .leaf { animation: none !important; }
+  .leaf, .monstera-leaf { animation: none !important; }
   .leaf--one { top: 14%; }
   .leaf--two { top: 34%; }
   .leaf--three { top: 56%; }
