@@ -1,82 +1,49 @@
 # Monica Lugo Alisamentos
 
-Landing page responsiva e acessível para apresentar os serviços de Monica Lugo em Viamão.
+Landing page responsiva e acessível para apresentar os serviços de Monica Lugo em Viamão, com foco em alisamentos, tratamentos capilares e agendamento pelo WhatsApp.
+
+## Status do projeto
+
+🚧 Projeto em desenvolvimento.
+
+A estrutura inicial e a identidade visual já estão prontas. As fotos, informações finais e alguns conteúdos ainda serão adicionados.
 
 ## Tecnologias
 
-- HTML semântico
-- CSS moderno e responsivo
+- HTML5 semântico
+- CSS3 moderno e responsivo
 - JavaScript puro
+- Design mobile first
 - Sem backend
 - Sem dependências obrigatórias
 
-## Como visualizar
+## Funcionalidades
 
-Abra o arquivo `index.html` no navegador.
+- Layout responsivo para celular, tablet e desktop
+- Menu adaptado para dispositivos móveis
+- Botão de contato pelo WhatsApp
+- Link para o Instagram
+- Link para localização no Google Maps
+- Seção de serviços
+- Área para fotos de antes e depois
+- Seção sobre a profissional
+- Estrutura preparada para adicionar fotos e vídeos
 
-Para uma experiência melhor durante o desenvolvimento, use uma extensão como **Live Server** no VS Code.
+## Visualização
 
-## Onde editar as informações
+Abra o arquivo `index.html` diretamente no navegador.
 
-Abra o arquivo `data.js`.
+Durante o desenvolvimento, recomenda-se utilizar a extensão **Live Server** no Visual Studio Code.
 
-```js
-const siteData = {
-  links: {
-    instagram: "https://www.instagram.com/monicalugoliso",
-    whatsappNumber: "",
-    googleMaps: ""
-  }
-};
-```
-
-### WhatsApp
-
-Preencha o número com código do país e DDD, somente números.
-
-Exemplo fictício:
-
-```js
-whatsappNumber: "5551999999999"
-```
-
-### Google Maps
-
-Cole o link completo do local em:
-
-```js
-googleMaps: "LINK_AQUI"
-```
-
-### Serviços
-
-Os serviços ficam no array `services` do arquivo `data.js`. É possível adicionar, remover ou trocar os textos sem mexer no HTML.
-
-## Como adicionar fotos depois
-
-Coloque as imagens escolhidas dentro de:
+## Estrutura do projeto
 
 ```text
-assets/images/
-```
-
-Sugestão de nomes:
-
-```text
-perfil.webp
-capa.webp
-trabalhando.webp
-antes-01.webp
-depois-01.webp
-```
-
-O formato recomendado é **WebP**, por ser leve para sites.
-
-## Próximos passos
-
-1. Escolher a foto principal.
-2. Confirmar o número do WhatsApp.
-3. Confirmar o link do Google Maps.
-4. Selecionar os pares corretos de antes e depois.
-5. Adicionar fotos de trabalho e palestras.
-6. Revisar textos finais com a Monica.
+monica-lugo-alisamentos/
+├── assets/
+│   ├── images/
+│   └── favicon.svg
+├── data.js
+├── index.html
+├── script.js
+├── styles.css
+└── README.md
