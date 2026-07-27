@@ -3,13 +3,14 @@ const siteData = {
     name: "Monica Lugo",
     specialty: "Alisamentos",
     city: "Viamão",
-    state: "RS"
+    state: "RS",
+    address: "Rua Marcelino de Figueiredo, 791, Centro, Viamão - RS"
   },
 
   links: {
     instagram: "https://www.instagram.com/monicalugoliso",
-    whatsappNumber: "",
-    googleMaps: ""
+    whatsappNumber: "555195203032",
+    googleMaps: "https://www.google.com/maps/search/?api=1&query=Rua%20Marcelino%20de%20Figueiredo%2C%20791%2C%20Centro%2C%20Viam%C3%A3o%20-%20RS"
   },
 
   whatsappMessage:

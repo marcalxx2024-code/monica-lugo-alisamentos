@@ -159,9 +159,9 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
 .toast.is-visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 759px) {
-  .page-shell { padding-bottom: calc(82px + env(safe-area-inset-bottom)); }
+  .page-shell { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 
-  .toast { bottom: calc(80px + env(safe-area-inset-bottom)); }
+  .toast { bottom: calc(88px + env(safe-area-inset-bottom)); }
 
   .mobile-whatsapp {
     position: fixed;
@@ -187,7 +187,7 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
   }
 
   .mobile-whatsapp > span { color: #e8c99e; }
-  .mobile-whatsapp.is-footer-near { opacity: 0; pointer-events: none; transform: translateY(calc(100% + 20px)); }
+  .mobile-whatsapp.is-context-near { opacity: 0; pointer-events: none; transform: translateY(calc(100% + 20px)); }
 }
 
 @media (min-width: 481px) {

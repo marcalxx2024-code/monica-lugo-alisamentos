@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2800);
   };
 
-  const normalizePhone = (value) => value.replace(/\D/g, "");
+  const normalizePhone = (value) => String(value || "").replace(/\D/g, "");
 
   const buildWhatsAppUrl = () => {
-    const phone = normalizePhone(siteData.links.whatsappNumber || "");
+    const phone = normalizePhone(siteData?.links?.whatsappNumber);
 
     if (!phone) {
       return "";
@@ -34,14 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const configureWhatsAppLinks = () => {
-    const links = [
-      document.querySelector("#cta-whatsapp"),
-      document.querySelector("#quick-whatsapp"),
-      document.querySelector("#contact-whatsapp"),
-      document.querySelector("#mobile-whatsapp")
-    ];
-
     const whatsappUrl = buildWhatsAppUrl();
+    const links = document.querySelectorAll("[data-whatsapp-link]");
 
     links.forEach((link) => {
       if (!link) return;
@@ -75,13 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
       mapsLink.rel = "noopener noreferrer";
       mapsLink.removeAttribute("aria-disabled");
       mapsLink.classList.remove("is-disabled");
-      mapsLink.querySelector("small").textContent = "Abrir mapa";
+      mapsLink.querySelector("small").textContent = "Abrir no Google Maps";
       return;
     }
 
     mapsLink.addEventListener("click", (event) => {
       event.preventDefault();
-      showToast("A localização será adicionada em breve.");
+      showToast("Não foi possível abrir o mapa no momento.");
     });
   };
 
@@ -136,17 +130,28 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#current-year").textContent = new Date().getFullYear();
 
   const mobileWhatsapp = document.querySelector("#mobile-whatsapp");
+  const contactSection = document.querySelector(".contact-section");
   const footer = document.querySelector(".footer");
 
-  if (mobileWhatsapp && footer && "IntersectionObserver" in window) {
-    const footerObserver = new IntersectionObserver(
-      ([entry]) => {
-        mobileWhatsapp.classList.toggle("is-footer-near", entry.isIntersecting);
+  if (mobileWhatsapp && "IntersectionObserver" in window) {
+    const protectedSections = [contactSection, footer].filter(Boolean);
+    const visibleSections = new Set();
+    const contextObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visibleSections.add(entry.target);
+          } else {
+            visibleSections.delete(entry.target);
+          }
+        });
+
+        mobileWhatsapp.classList.toggle("is-context-near", visibleSections.size > 0);
       },
-      { threshold: 0.08 }
+      { rootMargin: "0px 0px -18% 0px", threshold: 0 }
     );
 
-    footerObserver.observe(footer);
+    protectedSections.forEach((section) => contextObserver.observe(section));
   }
 
   renderServices();
