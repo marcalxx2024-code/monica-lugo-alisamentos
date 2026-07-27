@@ -326,3 +326,71 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
 .contact-section { background: linear-gradient(135deg, #405844, #32493a); color: #fffdf8; }
 .contact-section .eyebrow { color: #e8cfac; }
 .mobile-whatsapp { background: #405844; box-shadow: 0 12px 26px rgba(50,74,57,0.22); }
+
+/* Sparse botanical accents — decorative only, kept outside the reading flow. */
+.hero-visual::before,
+.authority-photo::after,
+.contact-section::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.hero-visual::before {
+  width: 148px;
+  height: 180px;
+  top: -48px;
+  right: -58px;
+  opacity: 0.14;
+  transform: rotate(17deg);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23526c57' d='M78 192c-12-48-11-105 9-176l5 2c-8 52-8 108-9 174z'/%3E%3Cpath fill='%23526c57' d='M84 99C39 87 17 55 20 11c42 9 64 38 64 88zM87 121c39-11 57-40 50-78-39 12-54 42-50 78zM82 153c-35-8-54-33-50-67 34 9 51 33 50 67zM86 175c30-8 45-28 42-57-29 9-43 29-42 57z'/%3E%3C/svg%3E");
+}
+
+.authority-photo { position: relative; }
+.authority-photo::after {
+  width: 118px;
+  height: 150px;
+  right: -34px;
+  bottom: -38px;
+  opacity: 0.13;
+  transform: rotate(-14deg);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 130 170' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 163C48 120 73 72 111 12' fill='none' stroke='%23805c42' stroke-width='3' stroke-linecap='round'/%3E%3Cpath fill='%23805c42' d='M48 118c-26-3-40-18-42-39 25 3 39 17 42 39zm13-23c3-25 18-39 39-41-3 24-17 38-39 41zm-30 52C13 143 3 132 2 114c18 3 29 14 29 33zm50-73c2-18 13-29 29-31-2 18-12 28-29 31z'/%3E%3C/svg%3E");
+}
+
+.contact-section { position: relative; overflow: hidden; }
+.contact-section > * { position: relative; z-index: 1; }
+.contact-section::before {
+  width: 175px;
+  height: 175px;
+  top: -76px;
+  right: -48px;
+  opacity: 0.12;
+  transform: rotate(30deg);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 168C69 115 96 63 146 12' fill='none' stroke='%23f3e8d6' stroke-width='3' stroke-linecap='round'/%3E%3Cpath fill='%23f3e8d6' d='M47 139C19 130 5 111 8 83c27 8 42 27 39 56zm18-29c-4-28 9-47 35-57 5 28-8 47-35 57zm20-28c-2-22 8-38 29-48 3 23-7 39-29 48zm-54 83c-20-2-31-14-32-33 20 3 31 14 32 33zm81-99c0-18 10-31 27-38 1 18-9 31-27 38z'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-visual::before { animation: botanical-drift 12s ease-in-out infinite alternate; }
+  .authority-photo::after { animation: botanical-sway 14s ease-in-out infinite alternate; }
+  .contact-section::before { animation: botanical-drift 16s ease-in-out -4s infinite alternate; }
+}
+
+@keyframes botanical-drift {
+  from { translate: 0 0; rotate: 0deg; }
+  to { translate: -7px 10px; rotate: 3deg; }
+}
+
+@keyframes botanical-sway {
+  from { translate: 0 0; rotate: 0deg; }
+  to { translate: 6px -7px; rotate: -3deg; }
+}
+
+@media (min-width: 760px) {
+  .hero-visual::before { width: 190px; height: 228px; right: -82px; top: -64px; }
+  .authority-photo::after { width: 145px; height: 184px; right: -50px; bottom: -48px; }
+  .contact-section::before { width: 220px; height: 220px; right: -62px; top: -92px; }
+}
