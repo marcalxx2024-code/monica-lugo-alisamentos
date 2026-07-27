@@ -38,7 +38,7 @@ button, input, textarea, select { font: inherit; }
 .skip-link { position: fixed; top: 12px; left: 12px; z-index: 1000; transform: translateY(-150%); padding: 12px 16px; border-radius: 12px; background: var(--color-text); color: #fff; text-decoration: none; }
 .skip-link:focus { transform: translateY(0); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
-.page-shell { width: min(100%, 1440px); margin-inline: auto; overflow: hidden; }
+.page-shell { position: relative; z-index: 1; width: min(100%, 1440px); margin-inline: auto; overflow: hidden; }
 
 /* Mobile first: navigation and primary actions remain easy to reach on narrow screens. */
 .topbar {
@@ -393,4 +393,54 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
   .hero-visual::before { width: 190px; height: 228px; right: -82px; top: -64px; }
   .authority-photo::after { width: 145px; height: 184px; right: -50px; bottom: -48px; }
   .contact-section::before { width: 220px; height: 220px; right: -62px; top: -92px; }
+}
+
+/* Decorative layer: visible over the background and below every page control. */
+.hero-visual::before,
+.authority-photo::after,
+.contact-section::before { content: none; animation: none; }
+
+.leaf-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.leaf {
+  position: absolute;
+  width: clamp(30px, 4vw, 58px);
+  aspect-ratio: 0.62;
+  display: block;
+  border-radius: 100% 0 100% 0;
+  background: linear-gradient(135deg, #c5cec0, #8f9d89);
+  box-shadow: inset 2px -2px 0 rgba(255, 255, 255, 0.32);
+  opacity: 0.28;
+  transform: rotate(var(--rotation));
+  will-change: transform;
+}
+
+.leaf--one { top: 13%; left: 4%; --rotation: -28deg; }
+.leaf--two { top: 34%; right: 5%; --rotation: 42deg; opacity: 0.23; }
+.leaf--three { top: 63%; left: 9%; --rotation: 18deg; opacity: 0.22; }
+.leaf--four { top: 79%; right: 12%; --rotation: -48deg; opacity: 0.26; }
+.leaf--five { top: 91%; left: 42%; --rotation: 64deg; opacity: 0.2; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .leaf { animation: leaf-drift 12s ease-in-out infinite alternate; }
+  .leaf--two { animation-delay: -4s; animation-duration: 15s; }
+  .leaf--three { animation-delay: -8s; animation-duration: 14s; }
+  .leaf--four { animation-delay: -2s; animation-duration: 16s; }
+  .leaf--five { animation-delay: -6s; animation-duration: 13s; }
+}
+
+@keyframes leaf-drift {
+  from { transform: translate3d(0, 0, 0) rotate(var(--rotation)); }
+  to { transform: translate3d(8px, -12px, 0) rotate(calc(var(--rotation) + 7deg)); }
+}
+
+@media (max-width: 480px) {
+  .leaf { width: 34px; opacity: 0.25; }
+  .leaf--five { display: none; }
 }
