@@ -163,6 +163,8 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
 
   .toast { bottom: calc(88px + env(safe-area-inset-bottom)); }
 
+  .hero-actions #cta-whatsapp { display: none; }
+
   .mobile-whatsapp {
     position: fixed;
     right: 12px;
