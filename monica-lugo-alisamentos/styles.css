@@ -358,7 +358,7 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
   bottom: -38px;
   opacity: 0.13;
   transform: rotate(-14deg);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 130 170' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 163C48 120 73 72 111 12' fill='none' stroke='%23805c42' stroke-width='3' stroke-linecap='round'/%3E%3Cpath fill='%23805c42' d='M48 118c-26-3-40-18-42-39 25 3 39 17 42 39zm13-23c3-25 18-39 39-41-3 24-17 38-39 41zm-30 52C13 143 3 132 2 114c18 3 29 14 29 33zm50-73c2-18 13-29 29-31-2 18-12 28-29 31z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 130 170' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 163C48 120 73 72 111 12' fill='none' stroke='%238f9d89' stroke-width='3' stroke-linecap='round'/%3E%3Cpath fill='%238f9d89' d='M48 118c-26-3-40-18-42-39 25 3 39 17 42 39zm13-23c3-25 18-39 39-41-3 24-17 38-39 41zm-30 52C13 143 3 132 2 114c18 3 29 14 29 33zm50-73c2-18 13-29 29-31-2 18-12 28-29 31z'/%3E%3C/svg%3E");
 }
 
 .contact-section { position: relative; overflow: hidden; }
@@ -370,7 +370,7 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
   right: -48px;
   opacity: 0.12;
   transform: rotate(30deg);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 168C69 115 96 63 146 12' fill='none' stroke='%23f3e8d6' stroke-width='3' stroke-linecap='round'/%3E%3Cpath fill='%23f3e8d6' d='M47 139C19 130 5 111 8 83c27 8 42 27 39 56zm18-29c-4-28 9-47 35-57 5 28-8 47-35 57zm20-28c-2-22 8-38 29-48 3 23-7 39-29 48zm-54 83c-20-2-31-14-32-33 20 3 31 14 32 33zm81-99c0-18 10-31 27-38 1 18-9 31-27 38z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 168C69 115 96 63 146 12' fill='none' stroke='%23aeb9aa' stroke-width='3' stroke-linecap='round'/%3E%3Cpath fill='%23aeb9aa' d='M47 139C19 130 5 111 8 83c27 8 42 27 39 56zm18-29c-4-28 9-47 35-57 5 28-8 47-35 57zm20-28c-2-22 8-38 29-48 3 23-7 39-29 48zm-54 83c-20-2-31-14-32-33 20 3 31 14 32 33zm81-99c0-18 10-31 27-38 1 18-9 31-27 38z'/%3E%3C/svg%3E");
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -403,6 +403,8 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
 .leaf-layer {
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
@@ -416,31 +418,31 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
   border-radius: 100% 0 100% 0;
   background: linear-gradient(135deg, #c5cec0, #8f9d89);
   box-shadow: inset 2px -2px 0 rgba(255, 255, 255, 0.32);
-  opacity: 0.28;
+  opacity: 0.46;
   transform: rotate(var(--rotation));
   will-change: transform;
 }
 
-.leaf--one { top: 13%; left: 4%; --rotation: -28deg; }
-.leaf--two { top: 34%; right: 5%; --rotation: 42deg; opacity: 0.23; }
-.leaf--three { top: 63%; left: 9%; --rotation: 18deg; opacity: 0.22; }
-.leaf--four { top: 79%; right: 12%; --rotation: -48deg; opacity: 0.26; }
-.leaf--five { top: 91%; left: 42%; --rotation: 64deg; opacity: 0.2; }
+.leaf--one { top: 13%; left: 4%; --rotation: -28deg; --drift-x: 14px; --drift-y: -22px; --turn: 8deg; }
+.leaf--two { top: 34%; right: 5%; --rotation: 42deg; --drift-x: -18px; --drift-y: 16px; --turn: -10deg; opacity: 0.4; }
+.leaf--three { top: 63%; left: 9%; --rotation: 18deg; --drift-x: 20px; --drift-y: -14px; --turn: 12deg; opacity: 0.42; }
+.leaf--four { top: 79%; right: 12%; --rotation: -48deg; --drift-x: -12px; --drift-y: -24px; --turn: -7deg; opacity: 0.38; }
+.leaf--five { top: 91%; left: 42%; --rotation: 64deg; --drift-x: 16px; --drift-y: 12px; --turn: 9deg; opacity: 0.36; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .leaf { animation: leaf-drift 12s ease-in-out infinite alternate; }
-  .leaf--two { animation-delay: -4s; animation-duration: 15s; }
-  .leaf--three { animation-delay: -8s; animation-duration: 14s; }
-  .leaf--four { animation-delay: -2s; animation-duration: 16s; }
-  .leaf--five { animation-delay: -6s; animation-duration: 13s; }
+  .leaf { animation: leaf-drift 22s ease-in-out infinite alternate; }
+  .leaf--two { animation-delay: -7s; animation-duration: 28s; }
+  .leaf--three { animation-delay: -13s; animation-duration: 32s; }
+  .leaf--four { animation-delay: -4s; animation-duration: 25s; }
+  .leaf--five { animation-delay: -18s; animation-duration: 35s; }
 }
 
 @keyframes leaf-drift {
   from { transform: translate3d(0, 0, 0) rotate(var(--rotation)); }
-  to { transform: translate3d(8px, -12px, 0) rotate(calc(var(--rotation) + 7deg)); }
+  to { transform: translate3d(var(--drift-x), var(--drift-y), 0) rotate(calc(var(--rotation) + var(--turn))); }
 }
 
 @media (max-width: 480px) {
-  .leaf { width: 34px; opacity: 0.25; }
+  .leaf { width: 34px; opacity: 0.38; }
   .leaf--five { display: none; }
 }
