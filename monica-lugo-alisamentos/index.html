@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Monica Lugo Alisamentos</title>
+  <meta
+    name="description"
+    content="Alisamentos, cuidados capilares, manicure e pedicure em Viamão. Conheça o trabalho de Monica Lugo e agende seu atendimento."
+  />
+  <meta name="theme-color" content="#F7F2EA" />
+
+  <meta property="og:title" content="Monica Lugo Alisamentos" />
+  <meta
+    property="og:description"
+    content="Mais que alisar cabelos, transformo a autoestima de cada cliente."
+  />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./data.js" defer></script>
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="page-shell">
+    <header class="topbar" aria-label="Cabeçalho principal">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand-mark" aria-hidden="true">ML</span>
+        <span>
+          <strong>Monica Lugo</strong>
+          <small>Alisamentos</small>
+        </span>
+      </a>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        <span class="sr-only">Abrir menu</span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav id="menu-principal" class="main-nav" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main id="conteudo">
+      <section id="inicio" class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">Beleza, cuidado e autoestima em Viamão</p>
+          <h1>
+            Mais que alisar cabelos,
+            <em>transformo autoestima.</em>
+          </h1>
+          <p class="hero-text">
+            Atendimento próximo, técnica e cuidado em cada detalhe para valorizar
+            a beleza de cada cliente.
+          </p>
+
+          <div class="hero-actions" aria-label="Ações principais">
+            <a
+              id="cta-whatsapp"
+              class="button button-primary"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">✦</span>
+              Agendar pelo WhatsApp
+            </a>
+
+            <a
+              id="cta-instagram"
+              class="button button-secondary"
+              href="https://www.instagram.com/monicalugoliso"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver Instagram
+            </a>
+          </div>
+
+          <ul class="trust-list" aria-label="Diferenciais">
+            <li>Atendimento personalizado</li>
+            <li>Ambiente acolhedor</li>
+            <li>Foco em saúde e beleza</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-label="Área reservada para foto principal">
+          <div class="photo-placeholder photo-placeholder-hero media-frame media-frame--hero">
+            <span>Foto principal</span>
+            <small>Adicionaremos a melhor imagem depois</small>
+          </div>
+
+          <div class="floating-card">
+            <span class="floating-icon" aria-hidden="true">✦</span>
+            <p>
+              <strong>Especialista em alisamentos</strong>
+              <span>Resultados com cuidado e responsabilidade.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-links" aria-label="Links rápidos">
+        <a id="quick-whatsapp" class="quick-link" href="#">
+          <span aria-hidden="true">↗</span>
+          <strong>Agendar pelo WhatsApp</strong>
+          <small>Resposta rápida</small>
+        </a>
+
+        <a
+          class="quick-link"
+          href="https://www.instagram.com/monicalugoliso"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span aria-hidden="true">◎</span>
+          <strong>Instagram</strong>
+          <small>@monicalugoliso</small>
+        </a>
+
+        <a id="quick-maps" class="quick-link is-disabled" href="#" aria-disabled="true">
+          <span aria-hidden="true">⌖</span>
+          <strong>Localização</strong>
+          <small>Como chegar</small>
+        </a>
+      </section>
+
+      <section id="servicos" class="section section-soft">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Serviços</p>
+            <h2>Cuidado completo em um só lugar</h2>
+          </div>
+          <p>
+            Atendimento com cuidado, técnica e atenção aos detalhes.
+          </p>
+        </div>
+
+        <div id="services-grid" class="services-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="resultados" class="section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Resultados reais</p>
+            <h2>Antes e depois</h2>
+          </div>
+          <p>
+            Esta seção está pronta para receber os pares corretos de fotos após a
+            seleção e conferência.
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <article class="result-card">
+            <div class="before-after media-before-after">
+              <div class="photo-placeholder media-frame media-frame--before"><span>Antes</span></div>
+              <div class="photo-placeholder media-frame media-frame--after"><span>Depois</span></div>
+            </div>
+            <div class="result-card-copy">
+              <span>Transformação 01</span>
+              <p>Par de fotos a confirmar.</p>
+            </div>
+          </article>
+
+          <article class="result-card">
+            <div class="before-after media-before-after">
+              <div class="photo-placeholder media-frame media-frame--before"><span>Antes</span></div>
+              <div class="photo-placeholder media-frame media-frame--after"><span>Depois</span></div>
+            </div>
+            <div class="result-card-copy">
+              <span>Transformação 02</span>
+              <p>Par de fotos a confirmar.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="sobre" class="section authority-section">
+        <div class="authority-photo">
+          <div class="photo-placeholder photo-placeholder-tall media-frame media-frame--work">
+            <span>Foto trabalhando ou palestrando</span>
+          </div>
+        </div>
+
+        <div class="authority-copy">
+          <p class="eyebrow">Experiência e propósito</p>
+          <h2>Beleza também é conhecimento, cuidado e confiança.</h2>
+          <p>
+            Sou Monica Lugo, cabeleireira <strong>há mais de 15 anos</strong> e
+            <strong>especialista em alisamentos</strong>. Minha história com a beleza
+            começou ainda na infância, inspirada pela minha mãe, que também é cabeleireira.
+          </p>
+          <p>
+            Transformei minhas próprias inseguranças em propósito: cuidar dos cabelos,
+            elevar a autoestima e ajudar mulheres a se sentirem mais confiantes. Depois
+            de muitos desafios e recomeços, conquistei meu próprio espaço e o
+            reconhecimento pelo meu trabalho.
+          </p>
+
+          <div class="mini-stats" aria-label="Destaques profissionais">
+            <div>
+              <strong>Viamão</strong>
+              <span>Atendimento local</span>
+            </div>
+            <div>
+              <strong>3 áreas</strong>
+              <span>Cabelo, manicure e pedicure</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencia" class="section recognition-section">
+        <div class="section-heading recognition-heading">
+          <div>
+            <p class="eyebrow">Experiência e reconhecimento</p>
+            <h2>Uma trajetória construída com técnica, troca e dedicação.</h2>
+          </div>
+        </div>
+
+        <div class="recognition-content">
+          <div class="recognition-copy">
+            <p>
+              Ao longo da minha trajetória, tive a oportunidade de ministrar palestras
+              em Brasília, Manaus e no Paraguai. Também ofereço cursos personalizados
+              no meu próprio espaço, compartilhando técnicas e experiências com outros
+              profissionais da beleza.
+            </p>
+            <p>
+              Meu trabalho já recebeu premiações e reconhecimentos, resultado de anos
+              de dedicação, aprendizado e compromisso com cada cliente.
+            </p>
+
+            <ul class="recognition-highlights" aria-label="Destaques profissionais">
+              <li>
+                <strong>Mais de 15 anos</strong>
+                <span>de experiência como cabeleireira</span>
+              </li>
+              <li>
+                <strong>Especialista</strong>
+                <span>em alisamentos</span>
+              </li>
+              <li>
+                <strong>Palestras</strong>
+                <span>Brasília, Manaus e Paraguai</span>
+              </li>
+              <li>
+                <strong>Cursos personalizados</strong>
+                <span>realizados no próprio espaço</span>
+              </li>
+              <li>
+                <strong>Reconhecimento</strong>
+                <span>premiações profissionais</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="recognition-gallery" aria-label="Espaço reservado para fotos profissionais">
+            <div class="photo-placeholder media-frame recognition-photo">
+              <span>Palestras</span>
+              <small>Espaço para foto de palestra</small>
+            </div>
+            <div class="photo-placeholder media-frame recognition-photo">
+              <span>Cursos</span>
+              <small>Espaço para foto de curso</small>
+            </div>
+            <div class="photo-placeholder media-frame recognition-photo">
+              <span>Premiações</span>
+              <small>Espaço para foto de reconhecimento</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="section contact-section">
+        <div>
+          <p class="eyebrow">Agendamento</p>
+          <h2>Seu momento de cuidado começa aqui.</h2>
+          <p>
+            Assim que o número for confirmado, o botão abrirá uma mensagem pronta
+            no WhatsApp.
+          </p>
+        </div>
+
+        <a id="contact-whatsapp" class="button button-light" href="#">
+          Agendar atendimento
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="brand footer-brand">
+        <span class="brand-mark" aria-hidden="true">ML</span>
+        <span>
+          <strong>Monica Lugo</strong>
+          <small>Alisamentos</small>
+        </span>
+      </div>
+
+      <p>Viamão — RS</p>
+      <p>© <span id="current-year"></span> Monica Lugo Alisamentos.</p>
+    </footer>
+  </div>
+
+  <a id="mobile-whatsapp" class="mobile-whatsapp" href="#" aria-label="Agendar pelo WhatsApp">
+    <span aria-hidden="true">✦</span>
+    Agendar pelo WhatsApp
+  </a>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
