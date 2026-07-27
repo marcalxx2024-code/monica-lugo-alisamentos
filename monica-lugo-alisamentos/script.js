@@ -1,3 +1,28 @@
+const resetInitialScrollPosition = () => {
+  if (window.location.hash) {
+    return;
+  }
+
+  const root = document.documentElement;
+  const previousScrollBehavior = root.style.scrollBehavior;
+
+  root.style.scrollBehavior = "auto";
+  window.scrollTo(0, 0);
+  root.style.scrollBehavior = previousScrollBehavior;
+};
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+resetInitialScrollPosition();
+
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    resetInitialScrollPosition();
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.querySelector(".menu-button");
   const menu = document.querySelector(".main-nav");
