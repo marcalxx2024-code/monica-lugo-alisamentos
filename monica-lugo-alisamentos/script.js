@@ -47,39 +47,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const normalizePhone = (value) => String(value || "").replace(/\D/g, "");
 
-  const buildWhatsAppUrl = () => {
+  const buildWhatsAppUrl = (message = siteData.whatsappMessage) => {
     const phone = normalizePhone(siteData?.links?.whatsappNumber);
 
     if (!phone) {
       return "";
     }
 
-    const message = encodeURIComponent(siteData.whatsappMessage);
-    return `https://wa.me/${phone}?text=${message}`;
+    const encodedMessage = encodeURIComponent(message || "");
+    return `https://wa.me/${phone}?text=${encodedMessage}`;
+  };
+
+  const configureWhatsAppLink = (link, message) => {
+    if (!link) return;
+
+    const whatsappUrl = buildWhatsAppUrl(message);
+
+    if (whatsappUrl) {
+      link.href = whatsappUrl;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.removeAttribute("aria-disabled");
+      link.classList.remove("is-disabled");
+      return;
+    }
+
+    link.href = "#";
+    link.setAttribute("aria-disabled", "true");
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      showToast("O número do WhatsApp será adicionado em breve.");
+    });
   };
 
   const configureWhatsAppLinks = () => {
-    const whatsappUrl = buildWhatsAppUrl();
-    const links = document.querySelectorAll("[data-whatsapp-link]");
+    document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
+      configureWhatsAppLink(link, siteData.whatsappMessage);
+    });
 
-    links.forEach((link) => {
-      if (!link) return;
-
-      if (whatsappUrl) {
-        link.href = whatsappUrl;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        link.removeAttribute("aria-disabled");
-        link.classList.remove("is-disabled");
-        return;
-      }
-
-      link.href = "#";
-      link.setAttribute("aria-disabled", "true");
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        showToast("O número do WhatsApp será adicionado em breve.");
-      });
+    document.querySelectorAll("[data-service-whatsapp]").forEach((link) => {
+      const service = siteData.services[Number(link.dataset.serviceIndex)];
+      configureWhatsAppLink(link, service?.whatsappMessage);
     });
   };
 
@@ -111,12 +119,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     grid.innerHTML = siteData.services
       .map(
-        (service) => `
+        (service, index) => `
           <article class="service-card">
             <span class="service-icon" aria-hidden="true">${service.icon}</span>
             <h3>${service.title}</h3>
             <p>${service.description}</p>
-            <a href="#contato" aria-label="Saber mais sobre ${service.title}">Saber mais →</a>
+            <a href="#" data-service-whatsapp data-service-index="${index}" aria-label="Consultar ${service.title} pelo WhatsApp">Consultar pelo WhatsApp</a>
           </article>
         `
       )

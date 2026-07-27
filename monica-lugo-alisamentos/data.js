@@ -18,22 +18,28 @@ const siteData = {
 
   services: [
     {
-      title: "Cabeleireiro",
+      title: "Alisamentos",
       icon: "01",
       description:
-        "Alisamentos e cuidados para seus cabelos."
+        "Técnica e cuidado para valorizar a saúde e a beleza dos seus cabelos.",
+      whatsappMessage:
+        "Olá, Monica! Vi no seu site e gostaria de saber mais sobre alisamentos."
     },
     {
-      title: "Manicure",
+      title: "Tratamentos capilares",
       icon: "02",
       description:
-        "Cuidado e acabamento para suas unhas."
+        "Cuidados personalizados para manter seus cabelos saudáveis e bonitos.",
+      whatsappMessage:
+        "Olá, Monica! Vi no seu site e gostaria de saber mais sobre tratamentos capilares."
     },
     {
-      title: "Pedicure",
+      title: "Manicure e pedicure",
       icon: "03",
       description:
-        "Conforto e cuidado para seus pés."
+        "Cuidado e acabamento para unhas das mãos e dos pés.",
+      whatsappMessage:
+        "Olá, Monica! Vi no seu site e gostaria de saber mais sobre manicure e pedicure."
     }
   ]
 };
