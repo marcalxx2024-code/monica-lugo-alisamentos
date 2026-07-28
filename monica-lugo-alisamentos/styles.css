@@ -20,6 +20,8 @@
 html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 body {
   margin: 0;
+  max-width: 100%;
+  overflow-x: clip;
   background: radial-gradient(circle at 100% 0, rgba(205, 214, 194, 0.48), transparent 26rem), radial-gradient(circle at 0 46%, rgba(232, 209, 185, 0.28), transparent 24rem), var(--color-bg);
   color: var(--color-text);
   font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -146,12 +148,6 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
 .recognition-highlights strong { color: var(--color-gold-dark); font-family: "Playfair Display", Georgia, serif; font-size: 1.02rem; line-height: 1.15; }
 .recognition-highlights span { color: var(--color-muted); font-size: 0.8rem; line-height: 1.35; }
 .recognition-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.recognition-photo { min-height: 0; aspect-ratio: 1 / 1; border-radius: var(--radius-sm); }
-.recognition-photo:last-child { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
-.recognition-photo--gallery .media-gallery { width: 100%; height: 100%; gap: 2px; }
-.recognition-photo--gallery .media-gallery-item { height: 100%; margin: 0; border-radius: 0; }
-.recognition-photo--gallery .media-gallery-item:first-child { border-radius: calc(var(--radius-sm) - 2px) 0 0 calc(var(--radius-sm) - 2px); }
-.recognition-photo--gallery .media-gallery-item:last-child { border-radius: 0 calc(var(--radius-sm) - 2px) calc(var(--radius-sm) - 2px) 0; }
 .contact-section { margin-bottom: 50px; padding: 34px 22px; display: flex; flex-direction: column; align-items: stretch; gap: 24px; border-radius: 26px; background: var(--color-text); color: #fff; }
 .contact-section h2 { font-size: clamp(2rem, 9.5vw, 2.65rem); }
 .contact-section p:not(.eyebrow) { margin-bottom: 0; color: rgba(255,255,255,0.72); font-size: 0.96rem; }
@@ -394,18 +390,6 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
   pointer-events: none;
 }
 
-.monstera-leaf {
-  position: absolute;
-  top: clamp(-150px, -10vw, -72px);
-  right: clamp(-132px, -9vw, -54px);
-  width: clamp(190px, 22vw, 330px);
-  height: auto;
-  color: #6f8061;
-  opacity: 0.14;
-  transform: rotate(18deg);
-  transform-origin: top right;
-}
-
 /* Premium botanical composition: static silhouettes create depth without competing with the content. */
 :root {
   --color-bg: #f8f5ee;
@@ -512,31 +496,31 @@ body {
   border-color: rgba(156, 137, 105, 0.17);
 }
 
-.monstera-leaf { display: none; }
-
 .botanical-foliage {
   position: fixed;
   z-index: 1;
-  width: min(58vw, 820px);
+  width: min(46vw, 680px);
+  max-width: none;
   height: auto;
   display: block;
   pointer-events: none;
-  filter: drop-shadow(0 18px 22px rgba(42, 67, 48, 0.12));
+  user-select: none;
+  filter: drop-shadow(0 20px 28px rgba(34, 61, 42, 0.13));
 }
 
 .botanical-foliage--top {
-  top: clamp(-210px, -12vw, -92px);
-  right: clamp(-210px, -12vw, -78px);
-  opacity: 0.9;
-  transform: rotate(7deg);
+  top: clamp(-150px, -9vw, -70px);
+  right: clamp(-150px, -8vw, -72px);
+  opacity: 0.48;
+  transform: scaleX(-1) rotate(4deg);
 }
 
 .botanical-foliage--side {
-  top: 55vh;
-  left: clamp(-460px, -30vw, -240px);
-  width: min(45vw, 620px);
-  opacity: 0.5;
-  transform: scaleX(-1) rotate(-20deg);
+  top: 66vh;
+  left: clamp(-390px, -25vw, -220px);
+  width: min(38vw, 560px);
+  opacity: 0.3;
+  transform: rotate(-12deg);
 }
 
 /* Experience and recognition: shared bounds keep the two sections aligned. */
@@ -576,16 +560,10 @@ body {
 .authority-photo::after { z-index: 0; pointer-events: none; }
 
 .recognition-content {
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  grid-template-columns: 1fr;
   align-items: start;
   gap: clamp(32px, 5vw, 72px);
   max-width: 100%;
-}
-
-/* Flatten the former nested groups so every photo uses the same gallery card. */
-.recognition-gallery > .recognition-photo--gallery,
-.recognition-photo--gallery .media-gallery {
-  display: contents;
 }
 
 .recognition-gallery {
@@ -593,32 +571,31 @@ body {
   gap: 16px;
 }
 
-.recognition-gallery .media-gallery-item,
-.recognition-gallery > .recognition-photo {
+.recognition-card {
+  min-width: 0;
   min-height: 0;
-  aspect-ratio: 4 / 5;
   margin: 0;
   overflow: hidden;
   border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
-.recognition-gallery > .recognition-photo:last-child {
-  grid-column: auto;
-  aspect-ratio: 4 / 5;
-}
-
-.recognition-gallery .media-gallery-item > img,
-.recognition-gallery > .recognition-photo > img {
+.recognition-card > img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4 / 3;
   display: block;
   object-fit: cover;
 }
 
-.recognition-gallery .photo-placeholder::after,
-.recognition-gallery .photo-placeholder span,
-.recognition-gallery .photo-placeholder small {
-  display: none;
+.recognition-card figcaption {
+  padding: 12px 15px 13px;
+  color: var(--color-gold-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 900px) {
@@ -629,11 +606,36 @@ body {
 }
 
 @media (max-width: 600px) {
-  .recognition-gallery { grid-template-columns: 1fr; }
-}
+  .recognition-gallery {
+    grid-template-columns: none;
+    grid-template-rows: 1fr;
+    grid-auto-flow: column;
+    grid-auto-columns: 82%;
+    gap: 16px;
+    padding: 2px 0 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(140, 109, 64, 0.45) transparent;
+  }
 
-/* The nested copy is used only on mobile, where it can sit inside the hero visual. */
-.hero-visual > .botanical-foliage--top { display: none; }
+  .recognition-card {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+
+  .recognition-card > img { aspect-ratio: 4 / 5; }
+
+  .recognition-gallery::-webkit-scrollbar { height: 6px; }
+  .recognition-gallery::-webkit-scrollbar-track { background: transparent; }
+  .recognition-gallery::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(140, 109, 64, 0.45);
+  }
+}
 
 @media (min-width: 760px) {
   .service-card { min-height: 282px; padding: 30px; }
@@ -642,25 +644,22 @@ body {
 
 @media (max-width: 768px) {
   .leaf-layer {
-    position: absolute;
-    height: 620px;
-    overflow: visible;
+    position: fixed;
+    height: 100vh;
+    overflow: clip;
   }
 
-  .leaf-layer > .botanical-foliage--top { display: none; }
-
-  .hero-visual > .botanical-foliage--top {
+  .leaf-layer > .botanical-foliage--top {
     display: block;
-    position: absolute;
-    width: clamp(260px, 74vw, 330px);
+    width: clamp(280px, 78vw, 370px);
     max-width: none;
     height: auto;
-    top: 18px;
-    right: -55px;
-    opacity: 0.88;
+    top: -82px;
+    right: -145px;
+    opacity: 0.26;
     z-index: 1;
     pointer-events: none;
-    transform: rotate(-8deg);
+    transform: scaleX(-1) rotate(5deg);
   }
 
   .hero { overflow: visible; }
