@@ -535,6 +535,9 @@ body {
   transform: scaleX(-1) rotate(-20deg);
 }
 
+/* The nested copy is used only on mobile, where it can sit inside the hero visual. */
+.hero-visual > .botanical-foliage--top { display: none; }
+
 @media (min-width: 760px) {
   .service-card { min-height: 282px; padding: 30px; }
   .services-grid { gap: 22px; }
@@ -547,22 +550,26 @@ body {
     overflow: visible;
   }
 
-  .botanical-foliage--top {
+  .leaf-layer > .botanical-foliage--top { display: none; }
+
+  .hero-visual > .botanical-foliage--top {
     display: block;
     position: absolute;
-    width: clamp(290px, 82vw, 370px);
+    width: clamp(260px, 74vw, 330px);
     max-width: none;
     height: auto;
-    top: 220px;
-    right: -18px;
-    opacity: 0.9;
+    top: 18px;
+    right: -55px;
+    opacity: 0.88;
     z-index: 1;
     pointer-events: none;
     transform: rotate(-8deg);
   }
 
-  .hero-copy,
-  .hero-visual { position: relative; z-index: 2; }
+  .hero { overflow: visible; }
+  .hero-copy { position: relative; z-index: 2; }
+  .hero-visual { position: relative; z-index: 1; overflow: visible; }
+  .floating-card { z-index: 2; }
 
   .botanical-foliage--side { display: none; }
   .photo-placeholder-hero { border-radius: 34% 34% 18px 18px; }
