@@ -404,10 +404,10 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
 
 /* Premium botanical composition: static silhouettes create depth without competing with the content. */
 :root {
-  --color-bg: #f6f3eb;
+  --color-bg: #f8f5ee;
   --color-surface: #fffdf8;
-  --color-nude: #e2e7dc;
-  --color-nude-deep: #c6d0c1;
+  --color-nude: #eee8dc;
+  --color-nude-deep: #ded4c3;
   --color-text: #34473c;
   --color-muted: #68766d;
   --color-gold: #b89962;
@@ -417,9 +417,9 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
 
 body {
   background:
-    radial-gradient(ellipse 46rem 34rem at 100% -4%, rgba(179, 196, 171, 0.45), transparent 67%),
-    radial-gradient(ellipse 38rem 30rem at -8% 62%, rgba(225, 211, 190, 0.4), transparent 68%),
-    linear-gradient(115deg, #faf8f2 0%, #f4f0e7 52%, #eef1e9 100%);
+    radial-gradient(ellipse 44rem 32rem at 102% -4%, rgba(224, 216, 198, 0.42), transparent 68%),
+    radial-gradient(ellipse 38rem 30rem at -8% 62%, rgba(232, 218, 198, 0.32), transparent 68%),
+    linear-gradient(115deg, #fcfaf5 0%, #f8f4ec 52%, #f3ede2 100%);
 }
 
 .page-shell { isolation: isolate; }
@@ -456,7 +456,7 @@ body {
 
 .photo-placeholder {
   background:
-    linear-gradient(145deg, rgba(255, 253, 248, 0.94), rgba(217, 226, 209, 0.82)),
+    linear-gradient(145deg, rgba(255, 253, 248, 0.96), rgba(238, 231, 217, 0.88)),
     repeating-linear-gradient(45deg, rgba(140, 109, 64, 0.035) 0 1px, transparent 1px 16px);
 }
 
@@ -466,10 +466,10 @@ body {
 }
 
 .section-soft {
-  border-color: rgba(101, 127, 104, 0.18);
+  border-color: rgba(154, 134, 101, 0.18);
   background:
     radial-gradient(circle at 96% 8%, rgba(255, 253, 248, 0.78) 0 7%, transparent 7.2%),
-    linear-gradient(135deg, #e5eade 0%, #f5eee2 100%);
+    linear-gradient(135deg, #f0eadf 0%, #faf6ee 100%);
 }
 
 .section-soft::after {
@@ -479,7 +479,7 @@ body {
   height: 420px;
   left: -224px;
   bottom: -260px;
-  border: 1px solid rgba(109, 136, 110, 0.2);
+  border: 1px solid rgba(184, 153, 98, 0.2);
   border-radius: 58% 42% 48% 52%;
   transform: rotate(34deg);
   pointer-events: none;
@@ -488,7 +488,7 @@ body {
 .services-grid { position: relative; }
 .service-card {
   min-height: 244px;
-  border-color: rgba(103, 128, 106, 0.2);
+  border-color: rgba(156, 137, 105, 0.19);
   background: linear-gradient(150deg, rgba(255, 254, 249, 0.97), rgba(247, 246, 238, 0.9));
 }
 
@@ -505,49 +505,82 @@ body {
 }
 
 .result-card, .recognition-highlights li {
-  border-color: rgba(103, 128, 106, 0.17);
+  border-color: rgba(156, 137, 105, 0.17);
 }
 
-.botanical-branch {
+.monstera-leaf { display: none; }
+
+.botanical-foliage {
   position: fixed;
-  color: #6d866f;
-  opacity: 0.16;
+  z-index: 1;
+  width: min(58vw, 820px);
+  height: auto;
+  display: block;
   pointer-events: none;
+  filter: drop-shadow(0 18px 22px rgba(42, 67, 48, 0.12));
 }
 
-.botanical-branch--left {
-  top: 28vh;
-  left: -118px;
-  width: clamp(150px, 17vw, 250px);
-  transform: rotate(-12deg);
+.botanical-foliage--top {
+  top: clamp(-210px, -12vw, -92px);
+  right: clamp(-210px, -12vw, -78px);
+  opacity: 0.9;
+  transform: rotate(7deg);
 }
 
-.botanical-branch--bottom {
-  right: -88px;
-  bottom: -78px;
-  width: clamp(190px, 22vw, 310px);
-  color: #83967a;
-  opacity: 0.14;
-}
-
-.monstera-leaf {
-  top: clamp(-116px, -5vw, -34px);
-  right: clamp(-98px, -4vw, -26px);
-  width: clamp(250px, 28vw, 430px);
-  color: #5c765f;
-  opacity: 0.18;
-  transform: rotate(21deg);
+.botanical-foliage--side {
+  top: 55vh;
+  left: clamp(-460px, -30vw, -240px);
+  width: min(45vw, 620px);
+  opacity: 0.5;
+  transform: scaleX(-1) rotate(-20deg);
 }
 
 @media (min-width: 760px) {
   .service-card { min-height: 282px; padding: 30px; }
   .services-grid { gap: 22px; }
-  .botanical-branch--left { left: -96px; }
 }
 
 @media (max-width: 560px) {
-  .monstera-leaf { width: 220px; right: -96px; opacity: 0.12; }
-  .botanical-branch--left { width: 130px; left: -94px; opacity: 0.1; }
-  .botanical-branch--bottom { display: none; }
+  .botanical-foliage--top { width: 540px; top: -150px; right: -250px; opacity: 0.72; }
+  .botanical-foliage--side { display: none; }
   .photo-placeholder-hero { border-radius: 34% 34% 18px 18px; }
+}
+
+@media (max-width: 759px) {
+  .service-card {
+    min-height: 0;
+    padding: 28px 22px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    margin: 2px 0 16px;
+    flex: 0 0 auto;
+  }
+
+  .service-card h3 {
+    width: 100%;
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+  }
+
+  .service-card p {
+    width: min(100%, 30rem);
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
+
+  .service-card a {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 18px;
+    padding-top: 14px;
+    justify-content: center;
+  }
 }
