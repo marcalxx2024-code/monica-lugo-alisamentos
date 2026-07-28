@@ -540,8 +540,16 @@ body {
   .services-grid { gap: 22px; }
 }
 
-@media (max-width: 560px) {
-  .botanical-foliage--top { width: 540px; top: -150px; right: -250px; opacity: 0.72; }
+@media (max-width: 768px) {
+  .botanical-foliage--top {
+    display: block;
+    width: clamp(360px, 110vw, 460px);
+    top: 42px;
+    right: -180px;
+    opacity: 0.8;
+    z-index: 1;
+    pointer-events: none;
+  }
   .botanical-foliage--side { display: none; }
   .photo-placeholder-hero { border-radius: 34% 34% 18px 18px; }
 }
