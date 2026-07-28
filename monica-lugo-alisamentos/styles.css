@@ -539,6 +539,99 @@ body {
   transform: scaleX(-1) rotate(-20deg);
 }
 
+/* Experience and recognition: shared bounds keep the two sections aligned. */
+.authority-section,
+.recognition-section {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+  overflow: visible;
+}
+
+.authority-section {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.authority-copy,
+.authority-photo,
+.recognition-copy,
+.recognition-gallery {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.authority-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.authority-copy h2 {
+  max-width: 14ch;
+  overflow-wrap: normal;
+}
+
+.authority-photo { isolation: isolate; }
+.authority-photo > * { position: relative; z-index: 1; }
+.authority-photo::after { z-index: 0; pointer-events: none; }
+
+.recognition-content {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 72px);
+  max-width: 100%;
+}
+
+/* Flatten the former nested groups so every photo uses the same gallery card. */
+.recognition-gallery > .recognition-photo--gallery,
+.recognition-photo--gallery .media-gallery {
+  display: contents;
+}
+
+.recognition-gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.recognition-gallery .media-gallery-item,
+.recognition-gallery > .recognition-photo {
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.recognition-gallery > .recognition-photo:last-child {
+  grid-column: auto;
+  aspect-ratio: 4 / 5;
+}
+
+.recognition-gallery .media-gallery-item > img,
+.recognition-gallery > .recognition-photo > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.recognition-gallery .photo-placeholder::after,
+.recognition-gallery .photo-placeholder span,
+.recognition-gallery .photo-placeholder small {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .authority-section,
+  .recognition-content { grid-template-columns: 1fr; }
+
+  .recognition-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .recognition-gallery { grid-template-columns: 1fr; }
+}
+
 /* The nested copy is used only on mobile, where it can sit inside the hero visual. */
 .hero-visual > .botanical-foliage--top { display: none; }
 
