@@ -21,7 +21,7 @@ const siteData = {
       title: "Alisamentos",
       icon: "01",
       description:
-        "Técnica e cuidado para valorizar a saúde e a beleza dos seus cabelos.",
+        "Técnicas de alisamento com foco em fios alinhados, disciplinados e com aparência saudável.",
       whatsappMessage:
         "Olá, Monica! Vi no seu site e gostaria de saber mais sobre alisamentos."
     },
@@ -29,17 +29,9 @@ const siteData = {
       title: "Tratamentos capilares",
       icon: "02",
       description:
-        "Cuidados personalizados para manter seus cabelos saudáveis e bonitos.",
+        "Cuidados capilares para hidratação, nutrição e reconstrução, respeitando a necessidade de cada fio.",
       whatsappMessage:
         "Olá, Monica! Vi no seu site e gostaria de saber mais sobre tratamentos capilares."
-    },
-    {
-      title: "Manicure e pedicure",
-      icon: "03",
-      description:
-        "Cuidado e acabamento para unhas das mãos e dos pés.",
-      whatsappMessage:
-        "Olá, Monica! Vi no seu site e gostaria de saber mais sobre manicure e pedicure."
     }
   ]
 };
