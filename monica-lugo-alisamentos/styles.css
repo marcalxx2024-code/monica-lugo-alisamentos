@@ -194,6 +194,10 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
 @media (max-width: 759px) {
   .page-shell { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 
+  /* Keep the transition from results to the story compact on mobile. */
+  #resultados { padding-bottom: 30px; }
+  #sobre { padding-top: 30px; }
+
   .authority-section {
     padding-bottom: 34px;
     row-gap: 24px;
