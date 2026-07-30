@@ -589,8 +589,12 @@ body {
   object-fit: cover;
 }
 
-/* Award photos include portraits near the top of the original frames. */
-.recognition-card--award > img { object-position: center top; }
+/* Portraits need more vertical area than the landscape event photos. */
+.recognition-card--course > img,
+.recognition-card--award > img {
+  aspect-ratio: 1 / 1;
+  object-position: center top;
+}
 
 .recognition-card figcaption {
   padding: 12px 15px 13px;
