@@ -179,10 +179,12 @@
           <article class="result-card">
             <div class="before-after media-before-after">
               <div class="photo-placeholder media-frame media-frame--before">
-                <img src="./assets/images/resultado-01-antes.webp.jpeg" alt="Antes do alisamento, com cabelos volumosos e textura natural" loading="lazy" />
+                <img src="./assets/images/resultado-01-antes.webp" alt="Antes do alisamento, com cabelos volumosos e textura natural" width="960" height="1707" loading="lazy" />
+                <span class="comparison-label" aria-hidden="true">Antes</span>
               </div>
               <div class="photo-placeholder media-frame media-frame--after">
-                <img src="./assets/images/resultado-01-depois.jpg" alt="Depois do alisamento, com cabelos alinhados e brilho natural" loading="lazy" />
+                <img src="./assets/images/resultado-01-depois.webp" alt="Depois do alisamento, com cabelos alinhados e brilho natural" width="960" height="1707" loading="lazy" />
+                <span class="comparison-label" aria-hidden="true">Depois</span>
               </div>
             </div>
             <div class="result-card-copy">
@@ -193,10 +195,12 @@
           <article class="result-card">
             <div class="before-after media-before-after">
               <div class="photo-placeholder media-frame media-frame--before">
-                <img src="./assets/images/resultado-02-antes.jpg" alt="Antes do alisamento, com cabelos longos e textura natural" loading="lazy" />
+                <img src="./assets/images/resultado-02-antes.webp" alt="Antes do alisamento, com cabelos longos e textura natural" width="960" height="1280" loading="lazy" />
+                <span class="comparison-label" aria-hidden="true">Antes</span>
               </div>
               <div class="photo-placeholder media-frame media-frame--after">
-                <img src="./assets/images/resultado-02-depois.jpg" alt="Depois do alisamento, com cabelos longos, alinhados e brilho natural" loading="lazy" />
+                <img src="./assets/images/resultado-02-depois.webp" alt="Depois do alisamento, com cabelos longos, alinhados e brilho natural" width="960" height="1280" loading="lazy" />
+                <span class="comparison-label" aria-hidden="true">Depois</span>
               </div>
             </div>
             <div class="result-card-copy">
@@ -213,21 +217,25 @@
           </div>
         </div>
 
-        <div class="authority-copy">
-          <p class="eyebrow">Experiência e propósito</p>
-          <h2>Beleza também é conhecimento, cuidado e confiança.</h2>
-          <p>
-            Sou Monica Lugo, cabeleireira <strong>há mais de 15 anos</strong> e
-            <strong>especialista em alisamentos</strong>. Minha história com a beleza
-            começou ainda na infância, inspirada pela minha mãe, que também é cabeleireira.
-          </p>
-          <p>
-            Transformei minhas próprias inseguranças em propósito: cuidar dos cabelos,
-            elevar a autoestima e ajudar mulheres a se sentirem mais confiantes. Depois
-            de muitos desafios e recomeços, conquistei meu próprio espaço e o
-            reconhecimento pelo meu trabalho.
-          </p>
+        <div class="authority-content">
+          <div class="authority-heading">
+            <p class="eyebrow">Experiência e propósito</p>
+            <h2>Beleza também é conhecimento, cuidado e confiança.</h2>
+          </div>
 
+          <div class="authority-copy">
+            <p>
+              Sou Monica Lugo, cabeleireira <strong>há mais de 15 anos</strong> e
+              <strong>especialista em alisamentos</strong>. Minha história com a beleza
+              começou ainda na infância, inspirada pela minha mãe, que também é cabeleireira.
+            </p>
+            <p>
+              Transformei minhas próprias inseguranças em propósito: cuidar dos cabelos,
+              elevar a autoestima e ajudar mulheres a se sentirem mais confiantes. Depois
+              de muitos desafios e recomeços, conquistei meu próprio espaço e o
+              reconhecimento pelo meu trabalho.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -282,30 +290,47 @@
             aria-label="Galeria de palestras, cursos e premiações"
             tabindex="0"
           >
-            <figure class="recognition-card">
-              <img src="./assets/images/palestra-01.webp.jpeg" alt="Monica Lugo ministrando palestra sobre cuidados capilares" loading="lazy" />
-              <figcaption>Palestra</figcaption>
-            </figure>
-            <figure class="recognition-card">
-              <img src="./assets/images/palestra-02.webp.jpeg" alt="Monica Lugo falando ao microfone durante palestra profissional" loading="lazy" />
-              <figcaption>Palestra</figcaption>
-            </figure>
-            <figure class="recognition-card recognition-card--course">
-              <img src="./assets/images/curso-01.webp.jpeg" alt="Monica Lugo com participantes de curso segurando certificados" loading="lazy" />
-              <figcaption>Curso</figcaption>
-            </figure>
-            <figure class="recognition-card recognition-card--course">
-              <img src="./assets/images/curso-02.webp.jpeg" alt="Monica Lugo demonstrando técnica capilar durante curso" loading="lazy" />
-              <figcaption>Curso</figcaption>
-            </figure>
-            <figure class="recognition-card recognition-card--award">
-              <img src="./assets/images/premiacao-01.webp.jpeg" alt="Monica Lugo recebendo uma premiação profissional" loading="lazy" />
-              <figcaption>Premiações</figcaption>
-            </figure>
-            <figure class="recognition-card recognition-card--award">
-              <img src="./assets/images/premiacao-02.webp.jpeg" alt="Registro de uma premiação recebida por Monica Lugo" loading="eager" fetchpriority="high" decoding="async" />
-              <figcaption>Premiações</figcaption>
-            </figure>
+            <section class="recognition-category" aria-labelledby="recognition-talks-title">
+              <h3 id="recognition-talks-title" class="recognition-category-title">Palestras</h3>
+              <div class="recognition-pair">
+                <figure class="recognition-card">
+                  <img src="./assets/images/palestra-01.webp" alt="Monica Lugo ministrando palestra sobre cuidados capilares" width="960" height="640" loading="lazy" />
+                  <figcaption>Palestra</figcaption>
+                </figure>
+                <figure class="recognition-card">
+                  <img src="./assets/images/palestra-02.webp" alt="Monica Lugo falando ao microfone durante palestra profissional" width="960" height="640" loading="lazy" />
+                  <figcaption>Palestra</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="recognition-category" aria-labelledby="recognition-courses-title">
+              <h3 id="recognition-courses-title" class="recognition-category-title">Cursos</h3>
+              <div class="recognition-pair">
+                <figure class="recognition-card recognition-card--course recognition-card--course-01">
+                  <img src="./assets/images/curso-01.webp" alt="Monica Lugo com participantes de curso segurando certificados" width="960" height="1707" loading="lazy" />
+                  <figcaption>Curso</figcaption>
+                </figure>
+                <figure class="recognition-card recognition-card--course">
+                  <img src="./assets/images/curso-02.webp" alt="Monica Lugo demonstrando técnica capilar durante curso" width="960" height="1440" loading="lazy" />
+                  <figcaption>Curso</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="recognition-category" aria-labelledby="recognition-awards-title">
+              <h3 id="recognition-awards-title" class="recognition-category-title">Premiações</h3>
+              <div class="recognition-pair">
+                <figure class="recognition-card recognition-card--award recognition-card--award-landscape">
+                  <img src="./assets/images/premiacao-01.webp" alt="Monica Lugo recebendo uma premiação profissional" width="960" height="640" loading="lazy" />
+                  <figcaption>Premiação</figcaption>
+                </figure>
+                <figure class="recognition-card recognition-card--award recognition-card--award-portrait">
+                  <img src="./assets/images/premiacao-02.webp" alt="Registro de uma premiação recebida por Monica Lugo" width="960" height="1440" loading="lazy" decoding="async" />
+                  <figcaption>Premiação</figcaption>
+                </figure>
+              </div>
+            </section>
           </div>
         </div>
       </section>

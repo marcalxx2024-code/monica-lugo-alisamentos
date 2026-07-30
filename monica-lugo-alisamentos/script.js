@@ -168,11 +168,20 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#current-year").textContent = new Date().getFullYear();
 
   const mobileWhatsapp = document.querySelector("#mobile-whatsapp");
+  const resultsSection = document.querySelector("#resultados");
+  const aboutSection = document.querySelector("#sobre");
+  const recognitionSection = document.querySelector("#experiencia");
   const contactSection = document.querySelector(".contact-section");
   const footer = document.querySelector(".footer");
 
   if (mobileWhatsapp && "IntersectionObserver" in window) {
-    const protectedSections = [contactSection, footer].filter(Boolean);
+    const protectedSections = [
+      resultsSection,
+      aboutSection,
+      recognitionSection,
+      contactSection,
+      footer
+    ].filter(Boolean);
     const visibleSections = new Set();
     const contextObserver = new IntersectionObserver(
       (entries) => {
@@ -186,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         mobileWhatsapp.classList.toggle("is-context-near", visibleSections.size > 0);
       },
-      { rootMargin: "0px 0px -18% 0px", threshold: 0 }
+      { rootMargin: "0px", threshold: 0 }
     );
 
     protectedSections.forEach((section) => contextObserver.observe(section));
