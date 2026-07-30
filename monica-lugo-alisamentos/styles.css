@@ -589,6 +589,9 @@ body {
   object-fit: cover;
 }
 
+/* Award photos include portraits near the top of the original frames. */
+.recognition-card--award > img { object-position: center top; }
+
 .recognition-card figcaption {
   padding: 12px 15px 13px;
   color: var(--color-gold-dark);
