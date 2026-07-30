@@ -607,34 +607,19 @@ body {
 
 @media (max-width: 600px) {
   .recognition-gallery {
-    grid-template-columns: none;
-    grid-template-rows: 1fr;
-    grid-auto-flow: column;
-    grid-auto-columns: 82%;
-    gap: 16px;
-    padding: 2px 0 12px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 0;
-    overscroll-behavior-inline: contain;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(140, 109, 64, 0.45) transparent;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
-  .recognition-card {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
+  .recognition-card figcaption {
+    padding: 10px 11px 11px;
+    font-size: 0.72rem;
   }
+}
 
-  .recognition-card > img { aspect-ratio: 4 / 5; }
-
-  .recognition-gallery::-webkit-scrollbar { height: 6px; }
-  .recognition-gallery::-webkit-scrollbar-track { background: transparent; }
-  .recognition-gallery::-webkit-scrollbar-thumb {
-    border-radius: 999px;
-    background: rgba(140, 109, 64, 0.45);
-  }
+@media (max-width: 360px) {
+  .recognition-gallery { grid-template-columns: 1fr; }
+  .recognition-card > img { aspect-ratio: 4 / 3; }
 }
 
 @media (min-width: 760px) {
