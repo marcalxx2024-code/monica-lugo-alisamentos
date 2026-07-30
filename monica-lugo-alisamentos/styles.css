@@ -163,6 +163,8 @@ h2 { font-size: clamp(2rem, 9.5vw, 3rem); }
 @media (max-width: 759px) {
   .page-shell { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 
+  .authority-section { padding-bottom: 34px; }
+
   .toast { bottom: calc(88px + env(safe-area-inset-bottom)); }
 
   .hero-actions { display: none; }
